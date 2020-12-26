@@ -239,7 +239,13 @@ export default function PrimarySearchAppBar() {
              // onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle style={{ transform: "scale(1.5)",marginRight:'10px'}} /> <span style={{fontSize:'20px',fontWeight:'bold'}}>Đăng nhập</span>
+              <AccountCircle 
+              style={{ transform: "scale(1.5)",marginRight:'10px'}} /> 
+              {
+                JSON.parse(localStorage.getItem("user"))?
+                <span style={{fontSize:'20px',fontWeight:'bold'}}>Chào,{JSON.parse(localStorage.getItem("user")).name}</span>:
+              <span style={{fontSize:'20px',fontWeight:'bold'}}>Đăng nhập</span>
+              }
             </IconButton>
           </div>
 

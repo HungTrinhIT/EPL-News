@@ -1,4 +1,4 @@
-import Homepage from "../components/homepage/index"
+import Homepage from "../components/homepage/"
 import { createBrowserHistory } from "history";
 import{
     BrowserRouter as Router,

@@ -3,61 +3,48 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import "./style.css";
-import Logo1 from "../../../../images/club1.png"
-import Logo2 from "../../../../images/club2.png"
-import Logo3 from "../../../../images/club3.png"
-import Logo4 from "../../../../images/club4.png"
-import Logo5 from "../../../../images/club5.png"
-import Logo6 from "../../../../images/club6.png"
-import Logo7 from "../../../../images/club7.png"
-import Logo8 from "../../../../images/club8.png"
-import Logo9 from "../../../../images/club9.png"
-import Logo10 from "../../../../images/club10.png"
-import Logo11 from "../../../../images/club11.png"
-import Logo12 from "../../../../images/club12.png"
-import Logo13 from "../../../../images/club13.png"
-import Logo14 from "../../../../images/club14.png"
-import Logo15 from "../../../../images/club15.png"
-import Logo16 from "../../../../images/club16.png"
-import Logo17 from "../../../../images/club17.png"
-import Logo18 from "../../../../images/club18.png"
-import Logo19 from "../../../../images/club19.png"
-import Logo20 from "../../../../images/club20.png"
-import Avatar from '@material-ui/core/Avatar';
+import Logo1 from "../../../images/club1.png"
+import Logo2 from "../../../images/club2.png"
+import Logo3 from "../../../images/club3.png"
+import Logo4 from "../../../images/club4.png"
+import Logo5 from "../../../images/club5.png"
+import Logo6 from "../../../images/club6.png"
+import Logo7 from "../../../images/club7.png"
+import Logo8 from "../../../images/club8.png"
+import Logo9 from "../../../images/club9.png"
+import Logo10 from "../../../images/club10.png"
+import Logo11 from "../../../images/club11.png"
+import Logo12 from "../../../images/club12.png"
+import Logo13 from "../../../images/club13.png"
+import Logo14 from "../../../images/club14.png"
+import Logo15 from "../../../images/club15.png"
+import Logo16 from "../../../images/club16.png"
+import Logo17 from "../../../images/club17.png"
+import Logo18 from "../../../images/club18.png"
+import Logo19 from "../../../images/club19.png"
+import Logo20 from "../../../images/club20.png"
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Card from "./card"
+
 let list = [
-  { name: Logo1 },
-  { name: Logo2 },
-  { name: Logo3 },
-  { name: Logo4},
-  { name: Logo5 },
-  { name: Logo6 },
-  { name: Logo7 },
-  { name: Logo8 },
-  { name: Logo9},
-  { name: Logo10 },
-  { name: Logo11 },
-  { name: Logo12 },
-  { name: Logo13 },
-  { name: Logo14 },
-  { name: Logo15 },
-  { name: Logo16},
-  { name: Logo17 },
-  { name: Logo18 },
-  { name: Logo19 },
-  { name: Logo20 }
+  { club1:Logo1,name1: "Club1",club2: Logo2, name2:"Club2",time:"06/12 - 19h00"},
+  { club1:Logo3,name1: "Club3",club2: Logo4, name2:"Club4",time:"06/12 - 19h00"},
+  { club1:Logo5,name1: "Club1",club2: Logo6, name2:"Club6",time:"06/12 - 19h00"},
+  { club1:Logo7,name1: "Club1",club2: Logo8, name2:"Club8",time:"06/12 - 19h00"},
+  { club1:Logo9,name1: "Club1",club2: Logo10, name2:"Club10",time:"06/12 - 19h00"},
+  { club1:Logo11,name1: "Club1",club2: Logo12, name2:"Club12",time:"06/12 - 19h00"},
 ];
 
-const MenuItem = ({ text, selected }) => {
-  return  <Avatar style={{margin:'20px'}}  alt="Cindy Baker" src={text} />;
+const MenuItem = (props) => {
+  return  <Card data={props.data}/>;
 };
 
 export const Menu = (list, selected) =>
-  list.map(el => {
-    const { name } = el;
+  list.map((el,index) => {
+   
 
-    return <MenuItem text={name} key={name} selected={selected} />;
+    return <MenuItem data={el} key={index} selected={selected} />;
   });
 
 const Arrow = ({ text, className }) => {
@@ -176,10 +163,11 @@ class App extends Component {
       display: "inline-block"
     };
 
-    return (
-      <div className="App">
+    return (   
+      <div >
+      <h2>Lịch thi đấu</h2>
         <ScrollMenu
-          alignCenter={alignCenter}
+          alignCenter={false}
           arrowLeft={ArrowLeft}
           arrowRight={ArrowRight}
           clickWhenDrag={clickWhenDrag}
@@ -201,6 +189,7 @@ class App extends Component {
 
        
       </div>
+     
     );
   }
 }
