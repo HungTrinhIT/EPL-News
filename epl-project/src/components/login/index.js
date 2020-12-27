@@ -7,11 +7,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Calendar from "./../calendar/index"
+
 
 import { useHistory } from "react-router-dom";
 
@@ -42,7 +41,9 @@ export default function SignIn() {
   const history = useHistory();
 
   const handleSubmit=()=>{
-    history.push({pathname:'/calendar',state:{isAuth:true}})
+    const props=JSON.parse(localStorage.getItem("data","calendar"));
+    localStorage.setItem("user",JSON.stringify({name:"nvh"}));
+    history.push({pathname:`/calendar/${props.data.id}`,state:{isAuth:true , isBook:false}})
 }
   return (
     <DefaultLayout>

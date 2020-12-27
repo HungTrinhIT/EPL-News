@@ -10,11 +10,10 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     bottom: "0",
     width: "100%",
-    height: "20rem",
+    minHeight: "20rem"
   },
   paper: {
-    padding: theme.spacing(2),
-  
+    padding: theme.spacing(0),
   },
 }));
 function Footer(props)
