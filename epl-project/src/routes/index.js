@@ -1,4 +1,7 @@
-import Homepage from "../components/homepage/index"
+import Homepage from "../components/homepage/index";
+import Calendar from "../components/calendar/index";
+import Login from "../components/login/index";
+
 import { createBrowserHistory } from "history";
 import{
     BrowserRouter as Router,
@@ -21,10 +24,12 @@ export default function Routes()
     return (
         <Router history={history}>
           <Switch>
+          <Route exact path="/calendar" component={Calendar} />
+          <Route exact path="/login" component={Login} />
             {
-                routes.map((route,id)=>{
-                    return (<Route exact key={id} {...route}/>)
-                })
+                // routes.map((route,id)=>{
+                //     return (<Route exact key={id} {...route}/>)
+                // })
             }
              {/* <Route component={errorPage} /> */}
           </Switch>
