@@ -61,7 +61,7 @@ export default function Ranking(props)
                 })
             }
          <Link
-      href="/home1"
+      href="/scores"
      className={classes.link}
     >
      Xem thêm ...

@@ -1,18 +1,33 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import Avatar from '@material-ui/core/Avatar';
+import Badge from '@material-ui/core/Badge';
 
-const useStyles = makeStyles({
+
+const useStyles = makeStyles((theme)=>({
   table: {
     width:"100%",
-  }
-});
+  },
+  increaseBadge:{
+    backgroundColor:"green"
+  },
+  decreaseBadge:{
+    backgroundColor:"red"
+  },
+  normalBadge:{
+    backgroundColor:"gray"
+  },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
+}));
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -26,31 +41,48 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function BasicTable() {
+
+function CircleStatus({status})
+{
+  const classes = useStyles();
+  console.log(status)
+  return ( <Badge variant="dot"
+  classes={{ badge: status=="normal"?classes.normalBadge:(status=="increase"?classes.increaseBadge:classes.decreaseBadge) }}
+  style={{marginLeft:"10px"}}>
+
+  </Badge>)
+}
+
+export default function BasicTable(props) {
   const classes = useStyles();
 
   return (
     <TableContainer>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
-          <TableRow style={{background:'gray'}}>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          <TableRow style={{background:'rgba(221,221,221,0.4)'}}>
+            <TableCell align="">Pos</TableCell>
+            <TableCell align="left"></TableCell>
+            <TableCell align="left"></TableCell>
+            <TableCell align="left">Club</TableCell>
+            <TableCell align="right">PI</TableCell>
+            <TableCell align="right">GD</TableCell>
+            <TableCell align="right">Pts</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
+          {props.data.map((row,index) => (
+            <TableRow key={index}>
+              <TableCell >
+                1 
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="left"><CircleStatus status ={row.status}/></TableCell>
+              <TableCell align="right"> <Avatar alt={row.logo} src={row.logo} style={{display:"inline-block"}}/></TableCell>
+              <TableCell component="th" scope="row" align="left">
+               {row.name}</TableCell>
+              <TableCell align="right">{row.match}</TableCell>
+              <TableCell align="right">{row.gd}</TableCell>
+              <TableCell align="right">{row.pts}</TableCell>
             </TableRow>
           ))}
         </TableBody>

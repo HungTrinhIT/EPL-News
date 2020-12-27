@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     color:"white"
   },
   media: {
-    height: 300,
+    height: 350,
   },
   content:{
     backgroundImage:`url(${bgFooter})`,
