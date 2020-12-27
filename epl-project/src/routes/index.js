@@ -20,8 +20,12 @@ const routes=[
         component: News
     },
     {
-        path: ['/',"/home"],
-        component: Homepage
+        path: ["/calendar/:id"],
+        component: Calendar
+    },
+    {
+        path: ["/login"],
+        component: Login
     }
 ]
 
@@ -32,14 +36,14 @@ export default function Routes()
     return (
         <Router history={history}>
           <Switch>
-          <Route exact path="/calendar" component={Calendar} />
-          <Route exact path="/login" component={Login} />
+          {/* <Route exact path="/calendar" component={Calendar} /> */}
+          {/* <Route exact path="/login" component={Login} /> */}
             {
                 routes.map((route,id)=>{
                     return (<Route exact key={id} {...route}/>)
                 })
             }
-             {/* <Route component={errorPage} /> */}
+             <Route component={errorPage} />
           </Switch>
     </Router>
     )
