@@ -8,12 +8,12 @@ export default function MyMenu(props)
         <>
        <nav className="stroke">
             <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Bảng xếp hạng</a></li>
-            <li><a href="#">Câu lạc bộ</a></li>
-            <li><a href="#">Thống kê</a></li>
-            <li><a href="#">Cầu thủ</a></li>
+            <li><a href="/home">Trang chủ</a></li>
+            <li><a href="/news">Tin tức</a></li>
+            <li><a href="/ranking">Bảng xếp hạng</a></li>
+            <li><a href="/club">Câu lạc bộ</a></li>
+            <li><a href="/statistic">Thống kê</a></li>
+            <li><a href="/player">Cầu thủ</a></li>
             </ul>
         </nav>
       </>

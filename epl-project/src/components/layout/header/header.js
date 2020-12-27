@@ -22,6 +22,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import clsx from 'clsx';
 import Avatar from '@material-ui/core/Avatar';
 import Logo from "./logo.png";
+import {Link} from "react-router-dom";
+import PersonIcon from '@material-ui/icons/Person';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -107,6 +111,12 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
   };
 
+  const logout = ()=>{
+    localStorage.removeItem("user");
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  }
+
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
@@ -121,9 +131,10 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
+      style={{marginTop:'3em'}}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem style={{width:'100px'}} onClick={handleMenuClose}><PersonIcon/>Profile</MenuItem>
+      <MenuItem onClick={logout}><ExitToAppIcon/>Log out</MenuItem>
     </Menu>
   );
 
@@ -138,6 +149,14 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {
+        localStorage.getItem("user")?
+        (
+          <>
+          <MenuItem style={{width:'100px'}} onClick={handleMenuClose}><PersonIcon/>Profile</MenuItem>
+          <MenuItem onClick={logout}><ExitToAppIcon/>Log out</MenuItem>
+          </>
+        ):
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -149,6 +168,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Đăng nhập</p>
       </MenuItem>
+    }
     </Menu>
   );
 
@@ -178,8 +198,7 @@ export default function PrimarySearchAppBar() {
     >
       <List>
         {['Trang chủ', 'Tin tức', 'Bảng xếp hạng', 'Câu lạc bộ',"Thống kê","Cầu thủ"].map((text, index) => (
-          <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+          <ListItem button key={index}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -236,7 +255,7 @@ export default function PrimarySearchAppBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-             // onClick={handleProfileMenuOpen}
+             onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <AccountCircle 
@@ -244,7 +263,7 @@ export default function PrimarySearchAppBar() {
               {
                 JSON.parse(localStorage.getItem("user"))?
                 <span style={{fontSize:'20px',fontWeight:'bold'}}>Chào,{JSON.parse(localStorage.getItem("user")).name}</span>:
-              <span style={{fontSize:'20px',fontWeight:'bold'}}>Đăng nhập</span>
+                <Link  style={{fontSize:'20px',fontWeight:'bold',textDecoration:'none',color:'white'}} to="/login"><span>Đăng nhập</span></Link>
               }
             </IconButton>
           </div>
@@ -264,7 +283,7 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {/* {renderMenu} */}
+      {renderMenu}
     </div>
    </>
   );

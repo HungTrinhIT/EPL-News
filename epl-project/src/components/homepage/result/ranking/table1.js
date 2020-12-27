@@ -61,7 +61,7 @@ export default function BasicTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow style={{background:'rgba(221,221,221,0.4)'}}>
-            <TableCell align="">Pos</TableCell>
+            <TableCell >Pos</TableCell>
             <TableCell align="left"></TableCell>
             <TableCell align="left"></TableCell>
             <TableCell align="left">Club</TableCell>
