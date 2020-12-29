@@ -9,7 +9,7 @@ import{
     Route,
   } from "react-router-dom";
 import errorPage from "../components/error/index"
-
+import DetailNew from "../components/news/detailNew"
 const routes=[
     {
         path: ['/',"/home"],
@@ -20,12 +20,16 @@ const routes=[
         component: News
     },
     {
-        path: ["/calendar/:id"],
+        path: ['/',"/login"],
+        component: Login
+    },
+    {
+        path:["/calendar/:id"],
         component: Calendar
     },
     {
-        path: ["/login"],
-        component: Login
+        path:["/detailNews"],
+        component: DetailNew
     }
 ]
 
@@ -36,8 +40,7 @@ export default function Routes()
     return (
         <Router history={history}>
           <Switch>
-          {/* <Route exact path="/calendar" component={Calendar} /> */}
-          {/* <Route exact path="/login" component={Login} /> */}
+          
             {
                 routes.map((route,id)=>{
                     return (<Route exact key={id} {...route}/>)

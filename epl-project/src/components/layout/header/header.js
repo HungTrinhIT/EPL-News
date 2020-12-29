@@ -157,7 +157,8 @@ export default function PrimarySearchAppBar() {
           <MenuItem onClick={logout}><ExitToAppIcon/>Log out</MenuItem>
           </>
         ):
-      <MenuItem onClick={handleProfileMenuOpen}>
+        <Link style={{color:"black",textDecoration:'none'}} to="/login">
+      <MenuItem>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -168,6 +169,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Đăng nhập</p>
       </MenuItem>
+      </Link>
     }
     </Menu>
   );

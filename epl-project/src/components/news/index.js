@@ -14,39 +14,76 @@ import { makeStyles } from "@material-ui/core/styles";
 import Calendar from "./../calendar/index"
 
 import { useHistory } from "react-router-dom";
+import bgFooter from "../calendar/images/Footer.png";
+import News from "./popularNews" 
+import Divider from "@material-ui/core/Divider";
+import Highlight from "./highlight"
+import MainNew from "./mainNew"
 
 const useStyles = makeStyles((theme) => ({
+  body: {
+    width: "100%",
+    paddingBottom: "5%",
+  },
+  top: {
+    backgroundImage: "url(" + bgFooter + ")",
+    color: "white",
+    bottom: "0",
+    width: "100%",
+    height: "10rem",
+    fontSize: "50px",
+  },
   paper: {
-    marginTop : theme.spacing(8),
-    marginBottom: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    height: "100%",
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+  email: {
+    color: "rgb(61, 25, 91)",
+    fontWeight: "bold",
   },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+  content:{
+    margin:'0% 10%',
+    marginBottom: '5%'
+},
+divider:{
+    margin:'2% 0%',
+    background:'#C4C4C4',
+    height:'2px'
+}
 }));
 
 
 export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
-
-  const handleSubmit=()=>{
-    history.push({pathname:'/calendar',state:{isAuth:true}})
-}
+ 
+  
   return (
     <DefaultLayout>
-        <h2>News page</h2>
+     
+        <Grid
+        container
+        alignItems="center"
+        justify="center"
+        className={classes.body}
+      >
+          <Grid
+            item
+            xs={12}
+            className={classes.top}
+            container
+            alignItems="center"
+            style={{ paddingLeft: 15 }}
+          >
+            <span>Tin tức bên lề</span>
+          </Grid>
+        </Grid>
+        <div className={classes.content}>
+          <MainNew/>
+          <Divider className={classes.divider}/>
+          <News/>
+          <Divider className={classes.divider}/>
+          <Highlight/>
+        </div>
     </DefaultLayout>
   );
 }
