@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
-
+import Calendar from "./components/calendar";
 function App() {
   return (
     <div className="App">
-      <h1>ĐỒ ÁN THIẾT KẾ GIAO DIỆN - PA5 - EPL NEWS</h1>
+      <Calendar />
     </div>
   );
 }
