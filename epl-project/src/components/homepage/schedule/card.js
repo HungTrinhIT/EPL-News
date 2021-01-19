@@ -46,6 +46,7 @@ export default function SimpleCard(props) {
   
   const handleBook = () => {
     localStorage.setItem("data", JSON.stringify({ data: props.data }));
+    console.log(props.data);
     const book =JSON.parse(localStorage.getItem(`calendar${props.data.id}`))&&(JSON.parse(localStorage.getItem(`calendar${props.data.id}`)).data.id==props.data.id)?true:false;
     JSON.parse(localStorage.getItem("user"))
       ? history.push({ pathname: `/calendar/${props.data.id}`,state:{isAuth:true,isBook:book} })
@@ -61,14 +62,14 @@ export default function SimpleCard(props) {
           style={{ textAlign: "center" }}
         >
           <Grid item xs={5}>
-            <img src={props.data.club1} />
+            <img src={props.data.club1} style={{width: "50px", height: "50px"}}/>
             <div className={classes.nameClub}>{props.data.name1}</div>
           </Grid>
           <Grid item xs={2}>
             <h4>VS</h4>
           </Grid>
           <Grid item xs={5}>
-            <img src={props.data.club2} />
+            <img src={props.data.club2} style={{width: "50px", height: "50px"}} />
             <div className={classes.nameClub}>{props.data.name2}</div>
           </Grid>
         </Grid>
@@ -78,11 +79,11 @@ export default function SimpleCard(props) {
         <Button
           size="medium"
           variant="contained"
-          color={JSON.parse(localStorage.getItem(`calendar${props.data.id}`))&&(JSON.parse(localStorage.getItem(`calendar${props.data.id}`)).data.id==props.data.id) ?"primary":"secondary"}
+          color={JSON.parse(localStorage.getItem(`calendar${props.data.id}`))&&(JSON.parse(localStorage.getItem(`calendar${props.data.id}`)).data.id==props.data.id)&&JSON.parse(localStorage.getItem("user")) ?"primary":"secondary"}
           className={classes.book}
           onClick={handleBook}
         >
-          {JSON.parse(localStorage.getItem(`calendar${props.data.id}`))&&(JSON.parse(localStorage.getItem(`calendar${props.data.id}`)).data.id==props.data.id) ? 'Đã đặt lịch' : ' Đặt lịch'}
+          {JSON.parse(localStorage.getItem(`calendar${props.data.id}`))&&(JSON.parse(localStorage.getItem(`calendar${props.data.id}`)).data.id==props.data.id)&&JSON.parse(localStorage.getItem("user")) ? 'Đã đặt lịch' : ' Đặt lịch'}
         </Button>
       </CardActions>
     </Card>

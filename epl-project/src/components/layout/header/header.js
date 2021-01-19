@@ -25,6 +25,7 @@ import Logo from "./logo.png";
 import {Link} from "react-router-dom";
 import PersonIcon from '@material-ui/icons/Person';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -97,6 +98,7 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const history = useHistory();
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -115,6 +117,7 @@ export default function PrimarySearchAppBar() {
     localStorage.removeItem("user");
     setAnchorEl(null);
     handleMobileMenuClose();
+    window.location.reload(true);
   }
 
   const handleMobileMenuOpen = (event) => {
@@ -157,7 +160,8 @@ export default function PrimarySearchAppBar() {
           <MenuItem onClick={logout}><ExitToAppIcon/>Log out</MenuItem>
           </>
         ):
-      <MenuItem onClick={handleProfileMenuOpen}>
+        <Link style={{color:"black",textDecoration:'none'}} to="/login">
+      <MenuItem>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -168,6 +172,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Đăng nhập</p>
       </MenuItem>
+      </Link>
     }
     </Menu>
   );

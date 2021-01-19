@@ -6,7 +6,7 @@ function Layout(props) {
   return (
     <>
       <Header />
-      <div style={{minHeight:'100%',marginBottom:'50px'}}>
+      <div style={{minHeight:'100vh',marginBottom:'50px'}}>
         {props.children}
       </div>
       <Footer />

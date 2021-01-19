@@ -4,8 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import bgFooter from "./images/Footer.png";
 import Typography from "@material-ui/core/Typography";
-import Logo1 from "./images/manchester-united.png";
-import Logo2 from "./images/manchester-city.png";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import Image from "material-ui-image";
@@ -18,7 +16,6 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   body: {
     width: "100%",
-    backgroundColor: "#F4F4F4",
     paddingBottom: "25%",
   },
   top: {

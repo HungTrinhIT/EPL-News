@@ -46,14 +46,14 @@ export default function SimpleCard(props) {
       <CardContent>
       <Grid container justify="center" alignItems="center" style={{textAlign:'center'}}>
         <Grid item xs={12} md={5}>
-            <img src={props.data.club1}/>
+            <img src={props.data.club1} style={{width: "50px", height: "50px"}}/>
             <div className={classes.nameClub}>{props.data.name1}</div>
         </Grid>
         <Grid item xs={12} md={2}>
            <h4>{props.data.score}</h4>
         </Grid>
         <Grid item xs={12} md={5}>
-          <img src={props.data.club2}/>
+          <img src={props.data.club2} style={{width: "50px", height: "50px"}}/>
           <div className={classes.nameClub}>{props.data.name2}</div>
         </Grid>
       </Grid>

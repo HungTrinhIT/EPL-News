@@ -9,7 +9,7 @@ import{
     Route,
   } from "react-router-dom";
 import errorPage from "../components/error/index"
-
+import DetailNew from "../components/news/detailNew"
 const routes=[
     {
         path: ['/',"/home"],
@@ -26,6 +26,10 @@ const routes=[
     {
         path:["/calendar/:id"],
         component: Calendar
+    },
+    {
+        path:["/detailNews"],
+        component: DetailNew
     }
 ]
 
@@ -42,7 +46,7 @@ export default function Routes()
                     return (<Route exact key={id} {...route}/>)
                 })
             }
-             {/* <Route component={errorPage} /> */}
+             <Route component={errorPage} />
           </Switch>
     </Router>
     )
