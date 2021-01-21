@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultLayout from "../layout/index";
 
-export default function ErrorPage(props)
+export default function ErrorPage()
 {
     return (
         <DefaultLayout>

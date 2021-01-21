@@ -1,11 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import mainNew from "./images/mainnew.png"
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
@@ -31,8 +29,8 @@ export default function CenteredGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={8}>
-          <Link to="/detailNews">
+        <Grid item xs={12} md={8}>
+          <Link to="/detailNews" style={{textDecoration:'none'}}>
         <Card>
             <CardActionArea>
                 <CardMedia
@@ -50,7 +48,7 @@ export default function CenteredGrid() {
             </Card>
             </Link>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <AttractiveNew/>
         </Grid>
       </Grid>

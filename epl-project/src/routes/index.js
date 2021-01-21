@@ -10,6 +10,8 @@ import{
   } from "react-router-dom";
 import errorPage from "../components/error/index"
 import DetailNew from "../components/news/detailNew"
+import Statistic from "../components/statistic/index"
+
 const routes=[
     {
         path: ['/',"/home"],
@@ -30,6 +32,10 @@ const routes=[
     {
         path:["/detailNews"],
         component: DetailNew
+    },
+    {
+        path:["/statistic"],
+        component: Statistic
     }
 ]
 
