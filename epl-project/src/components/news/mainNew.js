@@ -32,7 +32,7 @@ export default function CenteredGrid() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={8}>
-          <Link to="/detailNews">
+          <Link to="/detailNews" style={{textDecoration:'none'}}>
         <Card>
             <CardActionArea>
                 <CardMedia

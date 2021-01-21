@@ -78,11 +78,11 @@ export default function SignIn() {
           </Grid>
         </Grid>
         <div className={classes.content}>
-          <MainNew/>
+            <MainNew/>
           <Divider className={classes.divider}/>
-          <News/>
+            <News/>
           <Divider className={classes.divider}/>
-          <Highlight/>
+           <Highlight/>
         </div>
     </DefaultLayout>
   );
