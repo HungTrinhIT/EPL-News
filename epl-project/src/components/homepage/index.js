@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import Scheme from "./schedule/index"
 import Result from "./result/index"
 import News from "./news/index"
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     content:{
         margin:'0% 10%',
         marginBottom: '5%'
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         height:'2px'
     }
 }));
-function Homepage(props)
+function Homepage()
 {
     const classes = useStyles();
     return (
@@ -25,11 +25,11 @@ function Homepage(props)
            <Carousel/>
            <div className={classes.content}>
                 <Divider className={classes.divider}/>
-                <Scheme/>
+                    <Scheme/>
                 <Divider className={classes.divider}/>
-                <Result/>
+                    <Result/>
                 <Divider className={classes.divider}/>
-                <News/>
+                    <News/>
            </div>
         </DefaultLayout>
     )

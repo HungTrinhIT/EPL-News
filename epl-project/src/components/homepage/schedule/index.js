@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import "./style.css";
@@ -15,14 +14,6 @@ import Logo9 from "../../../images/club9.png"
 import Logo10 from "../../../images/club10.png"
 import Logo11 from "../../../images/club11.png"
 import Logo12 from "../../../images/club12.png"
-import Logo13 from "../../../images/club13.png"
-import Logo14 from "../../../images/club14.png"
-import Logo15 from "../../../images/club15.png"
-import Logo16 from "../../../images/club16.png"
-import Logo17 from "../../../images/club17.png"
-import Logo18 from "../../../images/club18.png"
-import Logo19 from "../../../images/club19.png"
-import Logo20 from "../../../images/club20.png"
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Card from "./card"

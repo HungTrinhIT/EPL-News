@@ -1,21 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
-const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& > *': {
-//       margin: theme.spacing(1),
-//       width: '25ch',
-//     },
-//   },
-}));
+
 
 export default function Comment()
 {
-    const [checked, setChecked] = React.useState(true);
-    const classes = useStyles();
+  
     return (
         <>
         <h2>Bình luận</h2>

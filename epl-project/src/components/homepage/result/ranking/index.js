@@ -4,7 +4,7 @@ import Logo from "../../../layout/header/logo.png"
 import MenuTab from "./menutab"
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
    rankingHeader:{
        background: '#FF2882',
        color: "white",
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
    }
 }));
 
-export default function Ranking(props)
+export default function Ranking()
 {
     const classes = useStyles();
     return  (
@@ -28,7 +28,6 @@ export default function Ranking(props)
             <h2>Bảng xếp hạng</h2>
             <div className={classes.rankingHeader}>
                 <h1>Premier <img className={classes.logo} src={Logo}/> League</h1>
-              
             </div>
             <MenuTab/>
         </div>

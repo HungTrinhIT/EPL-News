@@ -3,15 +3,14 @@ import DefaultLayout from "../layout/index";
 import { makeStyles } from "@material-ui/core/styles";
 import bgFooter from "../calendar/images/Footer.png";
 import Grid from "@material-ui/core/Grid";
-import content from "./images/Newscontent.png";
 import newImg from "./images/news.png";
 import newImg2 from "./images/news2.png";
-
 import AttractiveNew from "./attractiveNews";
 import Comment from "./comment";
 import AddComment from "./addComment";
 import "./detailNews.css";
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
   body: {
     width: "100%",
     paddingBottom: "5%",
