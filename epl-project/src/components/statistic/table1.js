@@ -151,29 +151,14 @@ const filterModel = {
 
 export default function CustomRatingFilterOperator() {
 
-
-  // React.useEffect(() => {
-  //   if (data.columns.length > 0) {
-  //     const ratingColumn = data.columns.find((column) => column.field === 'rating');
-
-  //     ratingColumn.filterOperators = getNumericColumnOperators().map((operator) => ({
-  //       ...operator,
-  //       InputComponent: RatingInputValue,
-  //     }));
-
-  //     setColumns(data.columns);
-  //   }
-  // }, [data.columns]);
-
   return (
-    <div style={{ height: '40rem', width: '100%' }}>
+    <div style={{ height: '40rem', width: '100%'}}>
       <DataGrid 
       rows={dataFields} 
       columns={columnFields} 
       filterModel={filterModel} 
       rowsPerPageOptions={[10,20,30]}
       pageSize={10}
-      
       />
     </div>
   );

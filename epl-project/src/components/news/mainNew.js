@@ -29,7 +29,7 @@ export default function CenteredGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <Link to="/detailNews" style={{textDecoration:'none'}}>
         <Card>
             <CardActionArea>
@@ -48,7 +48,7 @@ export default function CenteredGrid() {
             </Card>
             </Link>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <AttractiveNew/>
         </Grid>
       </Grid>

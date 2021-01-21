@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
     color: "white",
     bottom: "0",
     width: "100%",
-    height: "10rem",
+    height: "15rem",
     padding: " 0 50px",
   },
   paper: {
@@ -68,7 +68,7 @@ export default function DetailNew() {
       </Grid>
       <div style={{ margin: "0 5%" }}>
         <Grid container spacing={3}>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <div className="news-detail">
               <h1 style={{ color: "#37003", fontSize: "48px" }}>
                 Thua đau Leicester, HLV Lampard chỉ trích cầu thủ Chelsea
@@ -166,7 +166,7 @@ export default function DetailNew() {
             <div className="news-footer">
               <div style={{display:"flex",justifyContent:"flex-end",alignItems:"center"}}>
                 <i
-                  class="fa fa-user-circle"
+                  className="fa fa-user-circle"
                   style={{marginRight:"16px"}}
                   style={{ fontSize: "18px" }}
                   aria-hidden="true"
@@ -175,7 +175,7 @@ export default function DetailNew() {
               </div>
             </div>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <AttractiveNew />
             <Comment />
           </Grid>

@@ -1,36 +1,39 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import userImg from "./images/user1.jpg";
 import "./addComment.css";
-
-const useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     '& > *': {
-  //       margin: theme.spacing(1),
-  //       width: '25ch',
-  //     },
-  //   },
-}));
+import { useHistory } from "react-router-dom";
 
 export default function Comment() {
-  const [checked, setChecked] = React.useState(true);
+  const history = useHistory();
   const [comment, setComment] = React.useState("");
   const [totalComment, setTotalComment] = React.useState([]);
-  const classes = useStyles();
 
   const handleOnChange = (e) => {
     setComment(e.target.value);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const commnetItem = comment;
-    const commentResult = [...totalComment, commnetItem];
-    setTotalComment(commentResult);
-    console.log(commentResult);
+    localStorage.setItem("data", JSON.stringify({ data: 'detailNews'}));
+    if(localStorage.getItem("user"))
+    {
+      e.preventDefault();
+      if(comment!="")
+      {
+        const commnetItem = comment;
+        setComment("");
+        const commentResult = [...totalComment, commnetItem];
+        setTotalComment(commentResult);
+        console.log(commentResult);
+      }
+    }
+    else{
+      JSON.parse(localStorage.getItem("user"))
+      ? history.push({ pathname: `/detailNews`})
+      : history.push({ pathname: `/login`});
+    }
   };
   return (
     <>
@@ -42,7 +45,6 @@ export default function Comment() {
           placeholder="Nội dung *"
           id="standard-basic"
           label="Nội dung"
-          inputProps={{ disableUnderline: true }}
           variant="filled"
           style={{
             width: "100%",
@@ -50,6 +52,7 @@ export default function Comment() {
             borderRadius: "5px",
             padding: "12px 10px",
           }}
+          value={comment}
           onChange={handleOnChange}
         />
         <br />
@@ -95,15 +98,15 @@ export default function Comment() {
               <p>{item}</p>
             </div>
             <div className="comment-interact">
-              <a class="like" href="#">
+              <a className="like" href="#">
                 Thích
               </a>
               <span aria-hidden="true"> · </span>
-              <a class="replay" href="#">
+              <a className="replay" href="#">
                 Trả lời
               </a>
               <span aria-hidden="true"> · </span>
-              <i class="fa fa-thumbs-o-up"></i> <span class="count">1</span>
+              <i className="fa fa-thumbs-o-up"></i> <span className="count">1</span>
               <span aria-hidden="true"> · </span>
               <span>26m</span>
             </div>

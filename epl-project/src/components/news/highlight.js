@@ -30,10 +30,10 @@ export default function CenteredGrid() {
     <div className={classes.root}>
         <h2>Highlight</h2>
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
             <MainCard logo={MainLogo}/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
             <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                    <MinorCard logo={MainLogo}/>

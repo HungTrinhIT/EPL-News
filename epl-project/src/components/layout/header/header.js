@@ -132,8 +132,8 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
       style={{marginTop:'3em'}}
     >
-      <MenuItem style={{width:'100px'}} onClick={handleMenuClose}><PersonIcon/>Profile</MenuItem>
-      <MenuItem onClick={logout}><ExitToAppIcon/>Log out</MenuItem>
+      <MenuItem style={{width:'100px'}} onClick={handleMenuClose}><PersonIcon/>Cá nhân</MenuItem>
+      <MenuItem onClick={logout}><ExitToAppIcon/>Đăng xuất</MenuItem>
     </Menu>
   );
 

@@ -125,7 +125,9 @@ export default function FullWidthTabs() {
       {
         listRanking.map((list,index)=>{
           return (
-            <TabPanel1 value={index} index={index} dir={theme.direction}>
+            <TabPanel1 
+            value={index} index={index} dir={theme.direction}
+            >
                   {index == 0 ? <Table1/> : 
                   index == 1 ? <Table2/> :
                   index == 2 ? <Table3 /> :

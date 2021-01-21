@@ -27,7 +27,7 @@ const columnFields= [
   {
     field: "name", 
     headerName: "Tên cầu thủ",
-    flex:0.3
+    flex:1
   },
   {
     field: "avatar", 
@@ -35,7 +35,7 @@ const columnFields= [
     disableColumnMenu: true,
     headerName: "Quốc tịch", 
     sortable: false,
-    flex:0.2,
+    flex:0.5,
     renderCell: (params) => (
       <>
         <img src={params.value} style={{width:'50px',height:'40px'}}/>
@@ -45,7 +45,7 @@ const columnFields= [
   { 
     field: 'club', 
     headerName: "Câu lạc bộ",
-    flex:0.3,
+    flex:0.5,
     renderCell: (params) => (
       <>
         <span><img src={
@@ -77,7 +77,7 @@ const columnFields= [
   {
     field: "goal", 
     headerName: "Giá trị cầu thủ",
-    flex:0.2
+    flex:1
   },
 ]
 
