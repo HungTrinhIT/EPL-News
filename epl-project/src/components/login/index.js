@@ -40,18 +40,23 @@ export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleSubmit=()=>{
-    console.log(history)
+  const handleSubmit=(e)=>{
+    e.preventDefault();
     const props=JSON.parse(localStorage.getItem("data","calendar"));
-    localStorage.setItem("user",JSON.stringify({name:"nvh"}));
-    if(props.data == "detailNews")
+    if(props)
     {
-      history.push("/detailNews");
+      localStorage.setItem("user",JSON.stringify({name:"nvh"}));
+      if(props.data == "detailNews")
+      {
+        history.push("/detailNews");
+      }
+      else
+      {
+        history.push({pathname:`/calendar/${props.data.id}`,state:{isAuth:true , isBook:false}});
+      }
     }
     else{
-    if(props)
-       history.push({pathname:`/calendar/${props.data.id}`,state:{isAuth:true , isBook:false}});
-    else
+      localStorage.setItem("user",JSON.stringify({name:"nvh"}));
       history.push("/home");
     }
 }
@@ -75,14 +80,14 @@ export default function SignIn() {
             >
               Đăng nhập
             </Typography>
-            <form className={classes.form} noValidate>
+            <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -94,7 +99,7 @@ export default function SignIn() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Mật khẩu"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -112,19 +117,18 @@ export default function SignIn() {
                 style={{backgroundColor:"rgb(61, 25, 91)"}}
                 color="primary"
                 className={classes.submit}
-                onClick={handleSubmit}
               >
                 Đăng nhập
               </Button>
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    Quên mật khẩu?
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {"Đăng ký"}
                   </Link>
                 </Grid>
               </Grid>

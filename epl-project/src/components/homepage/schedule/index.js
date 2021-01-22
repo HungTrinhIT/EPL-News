@@ -21,7 +21,7 @@ import Card from "./card"
 let list = [
   {id:1, club1:Logo1,name1: "NewCastle",club2: Logo2, name2:"Crystal Palace",time:"06/12 - 19h00"},
   {id:2, club1:Logo3,name1: "Brighton",club2: Logo4, name2:"Southamton",time:"06/12 - 19h00"},
-  {id:3, club1:Logo5,name1: "Manchester United",club2: Logo6, name2:"Manchester City",time:"06/12 - 19h00"},
+  {id:3, club1:Logo5,name1: "MU",club2: Logo6, name2:"MC",time:"06/12 - 19h00"},
   {id:4, club1:Logo7,name1: "Arsernal",club2: Logo8, name2:"Aston Villa",time:"06/12 - 19h00"},
   {id:5, club1:Logo9,name1: "Burley",club2: Logo10, name2:"Chelsea",time:"06/12 - 19h00"},
   {id:6, club1:Logo11,name1: "Eveton",club2: Logo12, name2:"Lee United",time:"06/12 - 19h00"},
