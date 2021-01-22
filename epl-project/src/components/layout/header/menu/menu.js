@@ -1,8 +1,7 @@
 import React from "react";
-import { Menu,MenuItem } from '@material-ui/core';
 import "./style.css"
 
-export default function MyMenu(props)
+export default function MyMenu()
 {
     return (
         <>

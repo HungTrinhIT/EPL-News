@@ -10,8 +10,8 @@ import Logo8 from "../../../../images/club8.png"
 import { makeStyles } from '@material-ui/core/styles';
 import ListCard from "./listcard"
 import Link from '@material-ui/core/Link';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(() => ({
     title:{
         background: "rgba(196, 196, 196,0.52)",
         padding:"2px",
@@ -44,7 +44,7 @@ const list = [
         ]
     }
 ]
-export default function Ranking(props)
+export default function Ranking()
 {
     const classes = useStyles()
     return  (

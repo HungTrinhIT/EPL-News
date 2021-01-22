@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import "./style.css";
@@ -49,7 +48,7 @@ let list = [
   { name: Logo20 }
 ];
 
-const MenuItem = ({ text, selected }) => {
+const MenuItem = ({ text}) => {
   return  <Avatar style={{margin:'20px'}}  alt="Cindy Baker" src={text} />;
 };
 
@@ -60,7 +59,7 @@ export const Menu = (list, selected) =>
     return <MenuItem text={name} key={name} selected={selected} />;
   });
 
-const Arrow = ({ text, className }) => {
+const Arrow = ({ text }) => {
   return text == "<" ? <ArrowBackIosIcon/> : <ArrowForwardIosIcon/>
   
 };
@@ -158,7 +157,6 @@ class App extends Component {
       hideArrows,
       dragging,
       hideSingleArrow,
-      itemsCount,
       scrollToSelected,
       selected,
       translate,
@@ -168,13 +166,7 @@ class App extends Component {
 
     const menu = this.menuItems;
 
-    const checkboxStyle = {
-      margin: "5px 10px"
-    };
-    const valueStyle = {
-      margin: "5px 10px",
-      display: "inline-block"
-    };
+  
 
     return (
       <div className="App">

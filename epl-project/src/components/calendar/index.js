@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DefaultLayout from "../layout/index";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -13,17 +13,17 @@ import Button from "@material-ui/core/Button";
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   body: {
     width: "100%",
-    paddingBottom: "25%",
+    
   },
   top: {
     backgroundImage: "url(" + bgFooter + ")",
     color: "white",
     bottom: "0",
     width: "100%",
-    height: "10rem",
+    height: "15rem",
     fontSize: "50px",
   },
   paper: {
@@ -68,7 +68,7 @@ function Calendar() {
           className={classes.top}
           container
           alignItems="center"
-          style={{ paddingLeft: 15 }}
+          style={{ paddingLeft: '2em' }}
         >
           <span>Trận đấu sắp diễn ra</span>
         </Grid>

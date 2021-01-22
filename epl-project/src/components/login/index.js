@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const handleSubmit = (e) => {
@@ -44,16 +45,21 @@ export default function SignIn() {
     const props = JSON.parse(localStorage.getItem("data", "calendar"));
     localStorage.setItem("user", JSON.stringify({ name: "nvh" }));
     if (email == "nvh@gmail.com" && password == "12345") {
-      if (props)
-        history.push({
-          pathname: `/calendar/${props.data.id}`,
-          state: { isAuth: true, isBook: false },
-        });
-      else history.push("/home");
+      if (props.data == "detailNews") {
+        history.push("/detailNews");
+      } else {
+        if (props)
+          history.push({
+            pathname: `/calendar/${props.data.id}`,
+            state: { isAuth: true, isBook: false },
+          });
+        else history.push("/home");
+      }
     } else {
       alert("Sai tài khoản hoặc mật khẩu!");
     }
   };
+
   return (
     <DefaultLayout>
       <Grid

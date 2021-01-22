@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Carousel1 from "../../../images/carousel1.png"
@@ -12,7 +12,7 @@ const listCarousel= [
 ]
 
 
-export default function(props)
+export default function()
 {
 
     return (
@@ -20,9 +20,12 @@ export default function(props)
             {
                 listCarousel.map((carousel,index)=>{
                     return (
-                    <div key={index}>
+                        <a key={index} href="/detailNews">
+                    <div >
                         <img src={carousel} />
-                    </div>)
+                    </div>
+                        </a>
+                    )
                 })
             }
         </Carousel>
