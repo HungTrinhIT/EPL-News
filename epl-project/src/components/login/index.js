@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-
+import Alert from '@material-ui/lab/Alert';
 
 import { useHistory } from "react-router-dom";
 
@@ -39,9 +39,16 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
-
+  const [username,setUsername] = React.useState("");
+  const [password,setPassword] = React.useState("");
+  const [error,setError] = React.useState("");
   const handleSubmit=(e)=>{
     e.preventDefault();
+    if(username!= "nvh@gmail.com" || password!= "123456")
+    {
+      setError("Sai tên đăng nhập hoặc mật khẩu");
+      return;
+    }
     const props=JSON.parse(localStorage.getItem("data","calendar"));
     if(props)
     {
@@ -69,6 +76,7 @@ export default function SignIn() {
         className={classes.body}
       >
         <Grid item xs={6} container alignItems="center" justify="center">
+          
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
@@ -80,6 +88,7 @@ export default function SignIn() {
             >
               Đăng nhập
             </Typography>
+            {error!="" ?  <Alert severity="warning" fullWidth>{error}</Alert> : <></>}
             <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
                 variant="outlined"
@@ -92,6 +101,8 @@ export default function SignIn() {
                 autoComplete="email"
                 autoFocus
                 type="email"
+                value={username}
+                onChange={(e)=>setUsername(e.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -103,6 +114,8 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
               />
               <Grid item container alignItems="center" justify="flex-start">
                 <FormControlLabel
