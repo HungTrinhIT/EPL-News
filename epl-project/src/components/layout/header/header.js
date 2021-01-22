@@ -198,11 +198,38 @@ export default function PrimarySearchAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Trang chủ', 'Tin tức', 'Bảng xếp hạng', 'Câu lạc bộ',"Thống kê","Cầu thủ"].map((text, index) => (
-          <ListItem button key={index}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        {/* {['Trang chủ', 'Tin tức', 'Bảng xếp hạng', 'Câu lạc bộ',"Thống kê","Cầu thủ"].map((text, index) => ( */}
+          <a href="/home" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Trang chủ" />
+            </ListItem>
+          </a>
+          <a href="/news" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Tin tức" />
+            </ListItem>
+          </a>
+          <a href="/ranking" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Bảng xếp hạng" />
+            </ListItem>
+          </a>
+          <a href="/club" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Câu lạc bộ" />
+            </ListItem>
+          </a>
+          <a href="/statistic" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Thống kê" />
+            </ListItem>
+          </a>
+          <a href="/player" style={{color:'black',textDecoration:'none'}}>
+            <ListItem button>
+              <ListItemText primary="Cầu thủ" />
+            </ListItem>
+          </a>
+        {/* ))} */}
       </List>
     </div>
   );

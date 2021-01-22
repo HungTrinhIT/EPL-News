@@ -42,7 +42,7 @@ export default function MediaCard(props) {
           {/* <Typography variant="body2" color="secondary" component="div" style={{float:"right"}}>
               #News
           </Typography> */}
-          <Link to="/news" style={{float:'right',color:"#EB5757",fontWeight:'bold'}}>#News</Link>
+          <Link to="/news" style={{float:'right',color:"#f2f2f2",fontWeight:'bold'}}>#News</Link>
         </CardContent>
       </CardActionArea>
       {/* <CardActions>
