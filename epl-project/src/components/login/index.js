@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultLayout from "../layout/index";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -11,12 +11,11 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop : theme.spacing(8),
+    marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
@@ -35,20 +34,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
-
-  const handleSubmit=()=>{
-    console.log(history)
-    const props=JSON.parse(localStorage.getItem("data","calendar"));
-    localStorage.setItem("user",JSON.stringify({name:"nvh"}));
-    if(props)
-       history.push({pathname:`/calendar/${props.data.id}`,state:{isAuth:true , isBook:false}});
-    else
-      history.push("/home");
-}
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const props = JSON.parse(localStorage.getItem("data", "calendar"));
+    localStorage.setItem("user", JSON.stringify({ name: "nvh" }));
+    if (email == "nvh@gmail.com" && password == "12345") {
+      if (props)
+        history.push({
+          pathname: `/calendar/${props.data.id}`,
+          state: { isAuth: true, isBook: false },
+        });
+      else history.push("/home");
+    } else {
+      alert("Sai tài khoản hoặc mật khẩu!");
+    }
+  };
   return (
     <DefaultLayout>
       <Grid
@@ -69,9 +74,11 @@ export default function SignIn() {
             >
               Đăng nhập
             </Typography>
-            <form className={classes.form} noValidate>
+            <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
+                type="email"
                 variant="outlined"
+                value={email}
                 margin="normal"
                 required
                 fullWidth
@@ -80,7 +87,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                type="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -92,6 +99,8 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Grid item container alignItems="center" justify="flex-start">
                 <FormControlLabel
@@ -103,10 +112,9 @@ export default function SignIn() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                style={{backgroundColor:"rgb(61, 25, 91)"}}
+                style={{ backgroundColor: "rgb(61, 25, 91)" }}
                 color="primary"
                 className={classes.submit}
-                onClick={handleSubmit}
               >
                 Đăng nhập
               </Button>
