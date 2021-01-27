@@ -14,6 +14,7 @@ import Germany from "./germany.png"
 import France from "./france.png"
 import Brazil from "./brasil.png"
 import Spain from "./tbn.png"
+import Netherland from "./netherland.png"
 import Tot from "../../images/club18.png"
 import Arsernal from "../../images/club7.png"
 import MU from "../../images/club5.png"
@@ -82,26 +83,27 @@ const columnFields= [
 ]
 
 const dataFields = [
-  {id:'1',avatar: Korea, name:'Son Heugh-min',club:'Tottemham Hostpur',goal:'100.000 USD'},
-  {id:'2',avatar: England,name:'Jemie Vardy',club:'Leisester City',goal:'100.000 USD'},
-  {id:'3',avatar: Egypt,name:'Mohamed Salah',club:'Liverpool',goal:'100.000 USD'},
-  {id:'4',avatar: England,name:'Harry Kane',club:'Tottemham Hostpur',goal:'100.000 USD'},
-  {id:'5',avatar: Senegal,name:'Mane',club:'Liverpool',goal:'80.000 USD'},
-  {id:'6',avatar: England,name:'Marcus Rashford',club:'Manchester United',goal:'70.000 USD'},
-  {id:'7',avatar: England,name:'Lord Bender',club:'Arsernal',goal:'65.000 USD'},
-  {id:'8',avatar: Portugal,name:'Bruno Fernandes',club:'Manchester United',goal:'65.000 USD'},
-  {id:'9',avatar: Belgium,name:'Kevin De Bruyne',club:'Manchester City',goal:'65.000 USD'},
-  {id:'10',avatar: England,name:'James Maddison',club:'Leisester City',goal:'65.000 USD'},
-  {id:'11',avatar: England,name:'Erid Dier',club:'Tottemham Hostpur',goal:'80.000 USD'},
-  {id:'12',avatar: Gabon,name:'Pierre-Emerick Aubameyang',club:'Arsernal',goal:'80.000 USD'},
-  {id:'13',avatar: Germany,name:'Timo Werner',club:'Chelsea',goal:'80.000 USD'},
-  {id:'14',avatar: France,name:'Paul Pogba',club:'Manchester United',goal:'80.000 USD'},
-  {id:'15',avatar: England,name:'Trent Alexander-Arnold',club:'Liverpool',goal:'80.000 USD'},
-  {id:'16',avatar: England,name:'Jesse Lingard',club:'Manchester United',goal:'30.000 USD'},
-  {id:'17',avatar: England,name:'Jack Grealish',club:'Aston Villa',goal:'100.000 USD'},
-  {id:'18',avatar: Germany,name:'Antonio Rüdiger',club:'Chelsea',goal:'20.000 USD'},
-  {id:'19',avatar: Spain,name:'Thiago Alcantara',club:'Liverpool',goal:'50.000 USD'},
-  {id:'20',avatar: Brazil,name:'Thiago Silva',club:'Chelsea',goal:'50.000 USD'}
+  {id:'1',avatar: Belgium,name:'Kevin De Bruyne',club:'Manchester City',goal:'€120.00m'},
+  {id:'2',avatar: Egypt,name:'Mohamed Salah',club:'Liverpool',goal:'€120.00m'},
+  {id:'3',avatar: England,name:'Harry Kane',club:'Tottemham Hostpur',goal:'€120.00m'},
+  {id:'4',avatar: Senegal,name:'Sadio Mane',club:'Liverpool',goal:'€120.00m'},
+  {id:'5',avatar: England,name:'Trent Alexander-Arnold',club:'Liverpool',goal:'€110.00m'},
+  {id:'6',avatar: England,name:'Raheem Sterling',club:'Manchester City',goal:'€110.00m'},
+  {id:'7',avatar: Korea, name:'Son Heugh-min',club:'Tottemham Hostpur',goal:'€90.00m'},
+  {id:'8',avatar: Portugal,name:'Bruno Fernandes',club:'Manchester United',goal:'€90.00m'},
+  {id:'9',avatar: Germany,name:'Kai Havertz',club:'Chelsea',goal:'€81.00m'},
+  {id:'10',avatar: Netherland,name:'Virgil van Dijk',club:'Liverpool',goal:'€80.00m'},
+  {id:'11',avatar: England,name:'Marcus Rashford',club:'Manchester United',goal:'€80.00m'},
+  {id:'12',avatar: Brazil,name:'Roberto Firmino',club:'Liverpool',goal:'€72.00m'},
+  {id:'13',avatar: Portugal,name:'Bernardo Silva',club:'Manchester City',goal:'€70.00m'},
+  {id:'14',avatar: Germany,name:'Timo Werner',club:'Chelsea',goal:'€70.00m'},
+  {id:'15',avatar: France,name:'Paul Pogba',club:'Manchester United',goal:'€65.00m'},
+  {id:'16',avatar: Spain,name:'Rodri',club:'Manchester City',goal:'€64.00m'},
+  {id:'17',avatar: France,name:'Aymeric Laporte',club:'Manchester United',goal:'€60.00m'},
+  {id:'18',avatar: England,name:'Phil Foden',club:'Manchester City',goal:'€60.00m'},
+  {id:'19',avatar: Portugal,name:'Ruben Dias',club:'Manchester City',goal:'€60.00m'},
+  {id:'20',avatar: France,name:"N'Golo Kante",club:'Chelsea',goal:'€60.00m'},
+  {id:'21',avatar: Brazil,name:'Gabriel Jesus',club:'Manchester City',goal:'€60.00m'}
 ]
 
 const useStyles = makeStyles({
