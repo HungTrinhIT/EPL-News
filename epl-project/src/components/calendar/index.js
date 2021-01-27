@@ -9,7 +9,6 @@ import Paper from "@material-ui/core/Paper";
 import Image from "material-ui-image";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
@@ -42,6 +41,7 @@ function Calendar() {
   const history = useHistory();
 
   const handleBook = () => {
+    
     if (location.state.isBook === false) {
       localStorage.setItem(`calendar${props.data.id}`,JSON.stringify({data:{book:true,id:props.data.id}}));
     }
