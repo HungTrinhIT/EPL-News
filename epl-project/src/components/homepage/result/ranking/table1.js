@@ -53,13 +53,13 @@ export default function BasicTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow style={{background:'rgba(221,221,221,0.4)'}}>
-            <TableCell >Pos</TableCell>
+            <TableCell >Vị trí</TableCell>
             <TableCell align="left"></TableCell>
             <TableCell align="left"></TableCell>
-            <TableCell align="left">Club</TableCell>
-            <TableCell align="right">PI</TableCell>
-            <TableCell align="right">GD</TableCell>
-            <TableCell align="right">Pts</TableCell>
+            <TableCell align="left">Câu lạc bộ</TableCell>
+            <TableCell align="right">Vòng đấu</TableCell>
+            <TableCell align="right">Hệ số</TableCell>
+            <TableCell align="right">Điểm</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

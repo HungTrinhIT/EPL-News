@@ -22,6 +22,9 @@ import Chelsea from "../../images/club10.png"
 import Liverpool from "../../images/club15.png"
 import AstonVilla from "../../images/club19.png"
 import Leisester from "../../images/club14.png"
+import Everton from "../../images/club11.png"
+import Leed from "../../images/club13.png"
+import Newcastle from "../../images/club16.png"
 
 const columnFields= [
   {
@@ -61,7 +64,14 @@ const columnFields= [
                   params.value == "Aston Villa" ? AstonVilla :
                   (
                     params.value == "Chelsea" ? Chelsea :
-                    Arsernal
+                    (
+                      params.value == "Leeds United" ? Leed :
+                      (
+                        params.value == "Newcastle United" ? Newcastle :
+                        Arsernal
+                      )
+                    )
+                   
                   )
                  
                 )
@@ -82,14 +92,14 @@ const columnFields= [
 ]
 
 const dataFields = [
-  {id:'1',avatar: Korea, name:'Son Heugh-min',club:'Tottemham Hostpur',goal:12},
-  {id:'2',avatar: England,name:'Jemie Vardy',club:'Leisester City',goal:10},
-  {id:'3',avatar: Egypt,name:'Mohamed Salah',club:'Liverpool',goal:10},
-  {id:'4',avatar: England,name:'Harry Kane',club:'Tottemham Hostpur',goal:10},
-  {id:'5',avatar: Senegal,name:'Mane',club:'Liverpool',goal:9},
-  {id:'6',avatar: England,name:'Marcus Rashford',club:'Manchester United',goal:8},
-  {id:'7',avatar: England,name:'Lord Bender',club:'Arsernal',goal:8},
-  {id:'8',avatar: Portugal,name:'Bruno Fernandes',club:'Manchester United',goal:8},
+  {id:'1',avatar: Egypt,name:'Mohamed Salah',club:'Liverpool',goal:13},
+  {id:'2',avatar: England,name:'Harry Kane',club:'Tottemham Hostpur',goal:12},
+  {id:'3',avatar: Korea, name:'Son Heugh-min',club:'Tottemham Hostpur',goal:12},
+  {id:'4',avatar: Portugal,name:'Bruno Fernandes',club:'Manchester United',goal:11},
+  {id:'5',avatar: England,name:'Dominic Calvert-Lewin',club:'Everton',goal:11},
+  {id:'6',avatar: England,name:'Jamie Vardy',club:'Leisester City',goal:11},
+  {id:'7',avatar: England,name:'Patrick Bamford',club:'Leeds United',goal:10},
+  {id:'8',avatar: England,name:'Callumn Wilson',club:'Newcastle United',goal:8},
   {id:'9',avatar: Belgium,name:'Kevin De Bruyne',club:'Manchester City',goal:7},
   {id:'10',avatar: England,name:'James Maddison',club:'Leisester City',goal:7},
   {id:'11',avatar: England,name:'Erid Dier',club:'Tottemham Hostpur',goal:7},

@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import Alert from '@material-ui/lab/Alert';
 
 import { useHistory } from "react-router-dom";
 
@@ -37,29 +38,34 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
-
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const handleSubmit = (e) => {
+  const [username,setUsername] = React.useState("");
+  const [password,setPassword] = React.useState("");
+  const [error,setError] = React.useState("");
+  const handleSubmit=(e)=>{
     e.preventDefault();
-    const props = JSON.parse(localStorage.getItem("data", "calendar"));
-    localStorage.setItem("user", JSON.stringify({ name: "nvh" }));
-    if (email == "nvh@gmail.com" && password == "12345") {
-      if (props.data == "detailNews") {
-        history.push("/detailNews");
-      } else {
-        if (props)
-          history.push({
-            pathname: `/calendar/${props.data.id}`,
-            state: { isAuth: true, isBook: false },
-          });
-        else history.push("/home");
-      }
-    } else {
-      alert("Sai tài khoản hoặc mật khẩu!");
+    if(username!= "nvh@gmail.com" || password!= "123456")
+    {
+      setError("Sai tên đăng nhập hoặc mật khẩu");
+      return;
     }
-  };
-
+    const props=JSON.parse(localStorage.getItem("data","calendar"));
+    if(props)
+    {
+      localStorage.setItem("user",JSON.stringify({name:"nvh"}));
+      if(props.data == "detailNews")
+      {
+        history.push("/detailNews");
+      }
+      else
+      {
+        history.push({pathname:`/calendar/${props.data.id}`,state:{isAuth:true , isBook:false}});
+      }
+    }
+    else{
+      localStorage.setItem("user",JSON.stringify({name:"nvh"}));
+      history.push("/home");
+    }
+}
   return (
     <DefaultLayout>
       <Grid
@@ -69,6 +75,7 @@ export default function SignIn() {
         className={classes.body}
       >
         <Grid item xs={6} container alignItems="center" justify="center">
+          
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
@@ -80,6 +87,7 @@ export default function SignIn() {
             >
               Đăng nhập
             </Typography>
+            {error!="" ?  <Alert severity="warning" fullWidth>{error}</Alert> : <></>}
             <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
                 type="email"
@@ -89,11 +97,13 @@ export default function SignIn() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
-                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                value={username}
+                onChange={(e)=>setUsername(e.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -101,12 +111,12 @@ export default function SignIn() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Mật khẩu"
                 type="password"
                 id="password"
                 autoComplete="current-password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e)=>setPassword(e.target.value)}
               />
               <Grid item container alignItems="center" justify="flex-start">
                 <FormControlLabel
@@ -127,12 +137,12 @@ export default function SignIn() {
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">
-                    Forgot password?
+                    Quên mật khẩu?
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {"Đăng ký"}
                   </Link>
                 </Grid>
               </Grid>

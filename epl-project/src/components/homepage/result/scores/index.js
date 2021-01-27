@@ -28,19 +28,19 @@ const list = [
     {
         title: "Ngày thi đấu 1/38",
         data : [
-            {club1:Logo1,club2:Logo2,score:"3 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo3,club2:Logo4,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo5,club2:Logo6,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo7,club2:Logo8,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"}
+            {club1:Logo1,club2:Logo2,score:"3 - 0",date:"KT 12/09",name1:"West Brom",name2:"Crystal Palace"},
+            {club1:Logo3,club2:Logo4,score:"1 - 0",date:"KT 12/09",name1:"Brighton",name2:"Southamton"},
+            {club1:Logo5,club2:Logo6,score:"1 - 0",date:"KT 12/09",name1:"MU",name2:"MC"},
+            {club1:Logo7,club2:Logo8,score:"1 - 0",date:"KT 12/09",name1:"Arsernal",name2:"Aston Villa"}
         ]
     },
     {
-        title: "Ngày thi đấu 1/38",
+        title: "Ngày thi đấu 2/38",
         data : [
-            {club1:Logo1,club2:Logo2,score:"3 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo3,club2:Logo4,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo5,club2:Logo6,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"},
-            {club1:Logo7,club2:Logo8,score:"1 - 0",date:"KT 12/09",name1:"Club1",name2:"Club2"}
+            {club1:Logo1,club2:Logo2,score:"3 - 0",date:"KT 12/09",name1:"West Brom",name2:"Crystal Palace"},
+            {club1:Logo3,club2:Logo4,score:"1 - 0",date:"KT 12/09",name1:"Brighton",name2:"Southamton"},
+            {club1:Logo5,club2:Logo6,score:"1 - 0",date:"KT 12/09",name1:"MU",name2:"MC"},
+            {club1:Logo7,club2:Logo8,score:"1 - 0",date:"KT 12/09",name1:"Arsernal",name2:"Aston Villa"}
         ]
     }
 ]

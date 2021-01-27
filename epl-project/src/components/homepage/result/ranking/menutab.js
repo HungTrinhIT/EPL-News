@@ -152,7 +152,7 @@ export default function FullWidthTabs() {
           scrollButtons="on"
           aria-label="full width tabs example"
         >
-          <Tab className={classes.tab} label="First Team" {...a11yProps(0)} />
+          <Tab className={classes.tab} label="EPL" {...a11yProps(0)} />
           <Tab className={classes.tab} label="PL2" {...a11yProps(1)} />
           <Tab className={classes.tab} label="PL3" {...a11yProps(2)} />
         </Tabs>
