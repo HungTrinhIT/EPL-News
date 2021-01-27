@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultLayout from "../layout/index";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -16,7 +16,7 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop : theme.spacing(8),
+    marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
 
 export default function SignIn() {
   const classes = useStyles();
@@ -91,7 +90,9 @@ export default function SignIn() {
             {error!="" ?  <Alert severity="warning" fullWidth>{error}</Alert> : <></>}
             <form className={classes.form} onSubmit={handleSubmit}>
               <TextField
+                type="email"
                 variant="outlined"
+                value={email}
                 margin="normal"
                 required
                 fullWidth
@@ -127,7 +128,7 @@ export default function SignIn() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                style={{backgroundColor:"rgb(61, 25, 91)"}}
+                style={{ backgroundColor: "rgb(61, 25, 91)" }}
                 color="primary"
                 className={classes.submit}
               >
